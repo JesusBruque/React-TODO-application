@@ -10,7 +10,6 @@ const Home = () => {
 	const [todo, setTodo] = useState({
 		done: false,
 	});
-	const [check, setCheck] = useState(false);
 
 	console.log(list);
 	console.log({ todo });
@@ -25,8 +24,6 @@ const Home = () => {
 		listDelete.splice(id, 1);
 		setList(listDelete);
 	};
-
-	const checkTodo = () => {};
 
 	return (
 		<div className="card container d-flex justify-content-center col-6">
@@ -66,7 +63,6 @@ const Home = () => {
 							id={index}
 							todo={todo}
 							delete={deleteTodo}
-							check={checkTodo}
 						/>
 					);
 				})}
@@ -77,7 +73,7 @@ const Home = () => {
 					Total Tasks: {list.length}
 				</span>
 				<span className="badge bg-success text-dark me-2">
-					Complete Tasks:
+					Complete Tasks: {}
 				</span>
 			</div>
 		</div>

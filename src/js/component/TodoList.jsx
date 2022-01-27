@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Form } from "react-bootstrap";
 
 const TodoList = (props) => {
+	const [isChecked, setIsChecked] = useState(false);
+	const handleOnChange = () => {
+		setIsChecked(!isChecked);
+	};
+
 	return (
 		<>
 			<ul className="list-group list-group-flush container">
@@ -13,7 +18,8 @@ const TodoList = (props) => {
 					</div>
 					<Form.Check
 						className="checkbox p-2 bd-highlight"
-						onChange={props.checked}
+						checked={isChecked}
+						onChange={handleOnChange}
 						type={"checkbox"}
 					/>
 					<i
