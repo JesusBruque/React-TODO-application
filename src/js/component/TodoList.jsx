@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { Form } from "react-bootstrap";
 
 const TodoList = (props) => {
-	const [isChecked, setIsChecked] = useState(false);
-	const handleOnChange = () => {
-		setIsChecked(!isChecked);
-	};
-
+	console.log(props);
 	return (
 		<>
 			<ul className="list-group list-group-flush container">
@@ -18,9 +14,9 @@ const TodoList = (props) => {
 					</div>
 					<Form.Check
 						className="checkbox p-2 bd-highlight"
-						checked={isChecked}
-						onChange={handleOnChange}
 						type={"checkbox"}
+						onChange={props.onChange}
+						checked={props.checked}
 					/>
 					<i
 						className="far fa-trash-alt p-2 bd-highlight my-1"
@@ -35,6 +31,8 @@ TodoList.propTypes = {
 	todo: PropTypes.string,
 	delete: PropTypes.func,
 	id: PropTypes.number,
+	onChange: PropTypes.func,
+	checked: PropTypes.bool,
 };
 
 export default TodoList;

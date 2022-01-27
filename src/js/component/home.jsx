@@ -7,9 +7,12 @@ import TodoList from "./TodoList.jsx";
 //create your first component
 const Home = () => {
 	const [list, setList] = useState([]);
-	const [todo, setTodo] = useState({
-		done: false,
-	});
+	const [todo, setTodo] = useState({});
+
+	const [isChecked, setIsChecked] = useState(false);
+	const handleOnChange = () => {
+		setIsChecked(!isChecked);
+	};
 
 	console.log(list);
 	console.log({ todo });
@@ -63,6 +66,8 @@ const Home = () => {
 							id={index}
 							todo={todo}
 							delete={deleteTodo}
+							checked={isChecked}
+							onChange={handleOnChange}
 						/>
 					);
 				})}
@@ -73,7 +78,7 @@ const Home = () => {
 					Total Tasks: {list.length}
 				</span>
 				<span className="badge bg-success text-dark me-2">
-					Complete Tasks: {}
+					Complete Tasks:
 				</span>
 			</div>
 		</div>
