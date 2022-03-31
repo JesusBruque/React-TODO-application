@@ -12,12 +12,6 @@ const TodoList = (props) => {
 					<div className="p-2 flex-grow-1 bd-highlight">
 						{props.todo}
 					</div>
-					<Form.Check
-						className="checkbox p-2 bd-highlight"
-						type={"checkbox"}
-						onChange={props.onChange}
-						checked={props.checked}
-					/>
 					<i
 						className="far fa-trash-alt p-2 bd-highlight my-1"
 						onClick={() => props.delete(props.id)}></i>
@@ -28,11 +22,9 @@ const TodoList = (props) => {
 };
 
 TodoList.propTypes = {
-	todo: PropTypes.string,
+	todo: PropTypes.object,
 	delete: PropTypes.func,
 	id: PropTypes.number,
-	onChange: PropTypes.func,
-	checked: PropTypes.bool,
 };
 
 export default TodoList;
