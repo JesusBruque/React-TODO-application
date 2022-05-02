@@ -90,15 +90,6 @@ const Home = () => {
 				<span className="badge bg-light text-dark me-2">
 					Total Tasks: {list.length}
 				</span>
-				<span className="badge bg-success text-dark me-2">
-					Normal Tasks: {}
-				</span>
-				<span className="badge bg-warning text-dark me-2">
-					Important Tasks: {}
-				</span>
-				<span className="badge bg-danger text-dark me-2">
-					Urgent Tasks: {}
-				</span>
 			</div>
 		</div>
 	);
